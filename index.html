@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ansemhood wif Hat (AIF) — Legendary forest ranger of Solana. Rob from the jeets, give to the degens.">
+  <title>Ansemhood Wif Hat | AIF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Living forest atmosphere -->
+  <div class="realm" aria-hidden="true">
+    <div class="realm__sky"></div>
+    <div class="realm__forest" data-parallax="0.15" style="background-image:url('assets/media/forest-bg.png')"></div>
+    <div class="realm__godrays" data-parallax="0.08" style="background-image:url('assets/media/godrays.png')"></div>
+    <canvas class="realm__canvas" id="forestCanvas"></canvas>
+    <div class="realm__mist"></div>
+    <div class="realm__grain"></div>
+    <div class="realm__vignette"></div>
+  </div>
+
+  <div class="page">
+
+    <nav class="nav" id="nav">
+      <div class="nav__inner">
+        <a href="#hero" class="nav__brand">
+          <img src="logo.png" alt="" class="nav__mark" width="42" height="42">
+          <span class="nav__wordmark">
+            <span class="nav__name">Ansemhood Wif Hat</span>
+            <span class="nav__ticker">AIF</span>
+          </span>
+        </a>
+        <ul class="nav__links">
+          <li><a class="nav__link" href="#hero">Home</a></li>
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#howtobuy">How to Buy</a></li>
+          <li><a class="nav__link" href="#chart">Chart</a></li>
+          <li><a class="nav__link" href="#joinus">Join Us</a></li>
+        </ul>
+        <div class="nav__actions">
+          <a class="nav__icon" href="https://x.com/XXX" data-link="x" target="_blank" rel="noopener noreferrer" aria-label="X">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a class="nav__cta" target="_blank" href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=YOUR_TOKEN_ADDRESS_HERE">Buy $AIF</a>
+        </div>
+        <button class="nav__burger" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+
+    <!-- HERO: cinematic archer video + brand -->
+    <section class="hero" id="hero">
+      <div class="hero__stage">
+        <div class="hero__cinema">
+          <div class="hero__frame">
+            <video
+              class="hero__video"
+              id="heroVideo"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+              poster="assets/media/hero-archer.png"
+            >
+              <source src="assets/media/hero-archer.mp4" type="video/mp4">
+            </video>
+            <canvas class="hero__fx" id="heroFx" aria-hidden="true"></canvas>
+            <div class="hero__shade" aria-hidden="true"></div>
+            <div class="hero__rim" aria-hidden="true"></div>
+          </div>
+          <!-- <img class="hero__badge-logo" src="logo.png" alt="" width="72" height="72"> -->
+        </div>
+        <div class="hero__copy">
+          <p class="hero__live"><span class="hero__pulse"></span> Live on Solana</p>
+          <h1 class="hero__brand">
+            <span class="hero__brand-main">Ansemhood</span>
+            <span class="hero__brand-sub">wif <i>Hat</i></span>
+          </h1>
+          <p class="hero__line">Ansemhood Wif Hat 🐂🀄️ | robinhood's coldest nigga</p>
+          <div class="hero__ctas">
+            <a class="btn btn--gold" target="_blank" href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=YOUR_TOKEN_ADDRESS_HERE">
+              <svg viewBox="0 0 397.7 311.7" aria-hidden="true"><path fill="currentColor" d="M64.6 237.9c2.4-2.4 5.7-3.8 9.2-3.8h317.4c5.8 0 8.7 7 4.6 11.1l-62.7 62.7c-2.4 2.4-5.7 3.8-9.2 3.8H6.5c-5.8 0-8.7-7-4.6-11.1l62.7-62.7z"/><path fill="currentColor" opacity=".7" d="M64.6 3.8C67.1 1.4 70.4 0 73.8 0h317.4c5.8 0 8.7 7 4.6 11.1l-62.7 62.7c-2.4 2.4-5.7 3.8-9.2 3.8H6.5c-5.8 0-8.7-7-4.6-11.1L64.6 3.8z"/><path fill="currentColor" opacity=".85" d="M333.1 120.1c-2.4-2.4-5.7-3.8-9.2-3.8H6.5c-5.8 0-8.7 7-4.6 11.1l62.7 62.7c2.4 2.4 5.7 3.8 9.2 3.8h317.4c5.8 0 8.7-7 4.6-11.1l-62.7-62.7z"/></svg>
+              Buy $AIF
+            </a>
+            <a class="btn btn--leaf" href="#chart">
+              <svg viewBox="0 0 252 300" fill="currentColor" aria-hidden="true"><path d="M151.818 0h-51.636L0 150l100.182 150h51.636L252 150 151.818 0z"/><path fill="#07110a" d="M126 45.818 80.182 150 126 254.182 171.818 150 126 45.818z"/></svg>
+              Chart
+            </a>
+          </div>
+        </div>
+      </div>
+      <a class="hero__descend" href="#about"><span>Enter the forest</span><i></i></a>
+    </section>
+
+    <!-- ABOUT: chronicle strip with gallery art -->
+    <section class="section about" id="about">
+      <div class="container">
+        <header class="head reveal">
+          <!-- <img class="head__crest" src="assets/media/crest.png" alt="" width="72" height="72"> -->
+          <span class="head__eyebrow">The Legend</span>
+          <h2 class="head__title">Tales from the Canopy</h2>
+          <p class="head__sub">A ranger of Solana. A beanie of legend. A fellowship forged under golden light.</p>
+        </header>
+
+        <div class="chronicle">
+          <article class="chronicle__panel reveal">
+            <figure class="chronicle__media">
+              <img src="gallery/Photos_VkIVzq1lxJ.png" alt="Ansemhood in the sunlit forest" loading="lazy">
+              <figcaption>The Awakening</figcaption>
+            </figure>
+            <div class="chronicle__body">
+              <h3>Born of Moss & Gold</h3>
+              <p>From the deepest green of Solana rose Ansemhood — cloak of the canopy, quiver of arrows, and the orange hat that marks every true ranger of the realm.</p>
+            </div>
+          </article>
+
+          <article class="chronicle__panel chronicle__panel--flip reveal">
+            <figure class="chronicle__media">
+              <img src="gallery/Photos_aOuMr1Epcq.png" alt="Ansemhood drawing the bow" loading="lazy">
+              <figcaption>The Aim</figcaption>
+            </figure>
+            <div class="chronicle__body">
+              <h3>Every Arrow a Candle</h3>
+              <p>$AIF is the hunt. Paper hands flee the thicket. Holders stand with the Merry Men as green candles pierce the fog of the chart.</p>
+            </div>
+          </article>
+
+          <article class="chronicle__panel reveal">
+            <figure class="chronicle__media">
+              <img src="gallery/Photos_1bekURGbLI.png" alt="Ansemhood with a forest deer" loading="lazy">
+              <figcaption>The Bond</figcaption>
+            </figure>
+            <div class="chronicle__body">
+              <h3>Guardian of the Grove</h3>
+              <p>Not a cartoon coin — a cinematic fellowship. Protect the forest, protect the bag, wear the Hat with pride.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="mosaic reveal" aria-label="Merry Men gallery">
+          <img src="gallery/Photos_5GdNOORYtl.png" alt="Inspecting the silver coin" loading="lazy">
+          <img src="gallery/Photos_glLwOP4JEB.png" alt="Tankard at the village" loading="lazy">
+          <img src="gallery/Photos_KkqceKtcal.png" alt="Mountain ranger" loading="lazy">
+          <img src="gallery/Photos_QnbczJ9VHN.png" alt="Castle contemplation" loading="lazy">
+          <img src="gallery/Photos_UYLZ7xPg9N.png" alt="Hills of the realm" loading="lazy">
+        </div>
+
+        <blockquote class="lore reveal" style="background-image:url('assets/media/parchment.png')">
+          <p>Ansemhood Wif Hat 🐂📈
+            Ansem in the hood with the wif hat on. The coldest degen turned Robinhood's crypto revolution into onchain generational wealth.
+            Robinhood full risk on crypto is the ultimate bullish catalyst. Raising targets and blasting runners.
+            No cap — onchain is where the real bags get made. Join Ansemhood or get left behind.
+            🐂🀄️📈 Strap the hat and stay winning.</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- HOW TO BUY: forest path timeline -->
+    <section class="section howtobuy" id="howtobuy">
+      <div class="howtobuy__moss" style="background-image:url('assets/media/moss-texture.png')" aria-hidden="true"></div>
+      <div class="container">
+        <header class="head reveal">
+          <span class="head__eyebrow">Acquire $AIF</span>
+          <h2 class="head__title">How to Buy</h2>
+          <p class="head__sub">Follow the forest path. Four steps to join the fellowship.</p>
+        </header>
+
+        <ol class="path">
+          <li class="path__step reveal">
+            <span class="path__num">01</span>
+            <div class="path__node"></div>
+            <div class="path__content">
+              <h3>Claim a Wallet</h3>
+              <p>Install Phantom or any Solana wallet. Fill it with SOL — the sap of the chain.</p>
+            </div>
+          </li>
+          <li class="path__step reveal">
+            <span class="path__num">02</span>
+            <div class="path__node"></div>
+            <div class="path__content">
+              <h3>Enter PumpSwap</h3>
+              <p>Open PumpSwap and paste the $AIF contract. The trail leads straight to the token.</p>
+            </div>
+          </li>
+          <li class="path__step reveal">
+            <span class="path__num">03</span>
+            <div class="path__node"></div>
+            <div class="path__content">
+              <h3>Swap for $AIF</h3>
+              <p>Connect, swap SOL for $AIF, and adjust slippage when the hunt turns wild.</p>
+            </div>
+          </li>
+          <li class="path__step reveal">
+            <span class="path__num">04</span>
+            <div class="path__node"></div>
+            <div class="path__content">
+              <h3>Wear the Hat</h3>
+              <p>You are a Merry Man now. Hold strong and follow the fellowship on X.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="ca reveal">
+          <div>
+            <span class="ca__label">Contract Address</span>
+            <code class="ca__addr" id="contractAddr">YOUR_TOKEN_ADDRESS_HERE</code>
+          </div>
+          <button class="ca__copy" id="copyBtn" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            <span>Copy</span>
+          </button>
+        </div>
+
+        <div class="markets reveal">
+          <a class="market" href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=YOUR_TOKEN_ADDRESS_HERE" data-link="pumpswap" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 512 512" aria-hidden="true"><circle cx="256" cy="256" r="256" fill="currentColor"/><path fill="#07110a" d="M256 96c-35.3 0-64 28.7-64 64v32h-32c-35.3 0-64 28.7-64 64s28.7 64 64 64h32v32c0 35.3 28.7 64 64 64s64-28.7 64-64v-32h32c35.3 0 64-28.7 64-64s-28.7-64-64-64h-32v-32c0-35.3-28.7-64-64-64zm0 48c8.8 0 16 7.2 16 16v48h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-48v48c0 8.8-7.2 16-16 16s-16-7.2-16-16v-48h-48c-8.8 0-16-7.2-16-16s7.2-16 16-16h48v-48c0-8.8 7.2-16 16-16z"/></svg>
+            PumpSwap
+          </a>
+          <a class="market" href="https://dexscreener.com/solana/YOUR_TOKEN_ADDRESS_HERE" data-link="dexscreener" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 252 300" fill="currentColor" aria-hidden="true"><path d="M151.818 0h-51.636L0 150l100.182 150h51.636L252 150 151.818 0z"/><path fill="#07110a" d="M126 45.818 80.182 150 126 254.182 171.818 150 126 45.818z"/></svg>
+            DexScreener
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHART: DexScreener only -->
+    <section class="section chart" id="chart">
+      <div class="container">
+        <header class="head reveal">
+          <span class="head__eyebrow">Live Tracking</span>
+          <h2 class="head__title">The Hunt Chart</h2>
+          <p class="head__sub">Watch $AIF move through the forest in real time.</p>
+        </header>
+        <div class="chart__frame reveal">
+          <div class="chart__bark" aria-hidden="true"></div>
+          <iframe
+            id="chartFrame"
+            class="chart__embed"
+            title="AIF DexScreener Chart"
+            src="https://dexscreener.com/solana/YOUR_TOKEN_ADDRESS_HERE?embed=1&theme=dark&trades=0&info=0"
+            allow="clipboard-write"
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="chart__out reveal">
+          <a class="btn btn--leaf" href="https://dexscreener.com/solana/YOUR_TOKEN_ADDRESS_HERE" data-link="dexscreener" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 252 300" fill="currentColor" width="18" height="18"><path d="M151.818 0h-51.636L0 150l100.182 150h51.636L252 150 151.818 0z"/><path fill="#07110a" d="M126 45.818 80.182 150 126 254.182 171.818 150 126 45.818z"/></svg>
+            Open on DexScreener
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOIN US: banner.png only here -->
+    <section class="section joinus" id="joinus">
+      <div class="joinus__fire" style="background-image:url('assets/media/campfire-glow.png')" aria-hidden="true"></div>
+      <div class="container">
+        <header class="head reveal">
+          <span class="head__eyebrow">The Fellowship</span>
+          <h2 class="head__title">Join Us</h2>
+          <p class="head__sub">The campfire is lit. The forest is calling.</p>
+        </header>
+
+        <figure class="joinus__banner reveal">
+          <img src="banner.png" alt="Ansemhood wif Hat — The Merry Men of Solana" width="1400" height="700" loading="lazy">
+          <div class="joinus__fade" aria-hidden="true"></div>
+        </figure>
+
+        <p class="joinus__invite reveal">
+          Rally with the Merry Men. Follow the hunt on X, trade on PumpSwap, and keep the orange hat high above the canopy.
+        </p>
+
+        <div class="joinus__links reveal">
+          <a class="join" href="https://x.com/XXX" data-link="x" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            Follow on X
+          </a>
+          <a class="join" href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=YOUR_TOKEN_ADDRESS_HERE" data-link="pumpswap" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 512 512"><circle cx="256" cy="256" r="256" fill="currentColor"/><path fill="#07110a" d="M256 96c-35.3 0-64 28.7-64 64v32h-32c-35.3 0-64 28.7-64 64s28.7 64 64 64h32v32c0 35.3 28.7 64 64 64s64-28.7 64-64v-32h32c35.3 0 64-28.7 64-64s-28.7-64-64-64h-32v-32c0-35.3-28.7-64-64-64zm0 48c8.8 0 16 7.2 16 16v48h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-48v48c0 8.8-7.2 16-16 16s-16-7.2-16-16v-48h-48c-8.8 0-16-7.2-16-16s7.2-16 16-16h48v-48c0-8.8 7.2-16 16-16z"/></svg>
+            Trade on PumpSwap
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <!-- <img class="footer__crest" src="assets/media/crest.png" alt="" width="48" height="48"> -->
+        <p class="footer__brand">Ansemhood wif Hat ($AIF)</p>
+        <p class="footer__note">Memecoin on Solana. No intrinsic value. No formal team or roadmap. Trade at your own risk.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
