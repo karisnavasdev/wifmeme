@@ -4,7 +4,7 @@
 
 const CONFIG = {
   tokenAddress: "YOUR_TOKEN_ADDRESS_HERE",
-  xUrl: "https://x.com/XXX",
+  xUrl: "https://x.com/AnsemhoodwifH",
   pumpSwapUrl: "https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=YOUR_TOKEN_ADDRESS_HERE",
   dexScreenerUrl: "https://dexscreener.com/solana/YOUR_TOKEN_ADDRESS_HERE",
 };
