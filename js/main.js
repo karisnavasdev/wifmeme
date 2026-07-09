@@ -3,10 +3,10 @@
    ============================================================ */
 
 const CONFIG = {
-  tokenAddress: "YOUR_TOKEN_ADDRESS_HERE",
+  tokenAddress: "HcFUgXHEJWjZfDFvyFXDfVRkq5VTzJCfXNpJtcQ3pump",
   xUrl: "https://x.com/AnsemhoodwifH",
-  pumpSwapUrl: "https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=YOUR_TOKEN_ADDRESS_HERE",
-  dexScreenerUrl: "https://dexscreener.com/solana/YOUR_TOKEN_ADDRESS_HERE",
+  pumpSwapUrl: "https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=HcFUgXHEJWjZfDFvyFXDfVRkq5VTzJCfXNpJtcQ3pump",
+  dexScreenerUrl: "https://dexscreener.com/solana/HcFUgXHEJWjZfDFvyFXDfVRkq5VTzJCfXNpJtcQ3pump",
 };
 
 /* ---- Forest particle canvas (fireflies + leaves) ---- */
@@ -316,7 +316,7 @@ function applyConfig() {
   if (contractEl) contractEl.textContent = addr;
 
   const chartFrame = document.getElementById("chartFrame");
-  if (chartFrame && addr !== "YOUR_TOKEN_ADDRESS_HERE") {
+  if (chartFrame && addr !== "HcFUgXHEJWjZfDFvyFXDfVRkq5VTzJCfXNpJtcQ3pump") {
     chartFrame.src = `https://dexscreener.com/solana/${addr}?embed=1&theme=dark&trades=0&info=0`;
   }
 
@@ -325,11 +325,11 @@ function applyConfig() {
   });
 
   document.querySelectorAll("[data-link='pumpswap']").forEach((el) => {
-    el.href = addr !== "YOUR_TOKEN_ADDRESS_HERE" ? `${CONFIG.pumpSwapUrl}${addr}` : CONFIG.pumpSwapUrl;
+    el.href = addr !== "HcFUgXHEJWjZfDFvyFXDfVRkq5VTzJCfXNpJtcQ3pump" ? `${CONFIG.pumpSwapUrl}${addr}` : CONFIG.pumpSwapUrl;
   });
 
   document.querySelectorAll("[data-link='dexscreener']").forEach((el) => {
-    el.href = addr !== "YOUR_TOKEN_ADDRESS_HERE"
+    el.href = addr !== "HcFUgXHEJWjZfDFvyFXDfVRkq5VTzJCfXNpJtcQ3pump"
       ? `https://dexscreener.com/solana/${addr}`
       : CONFIG.dexScreenerUrl;
   });
